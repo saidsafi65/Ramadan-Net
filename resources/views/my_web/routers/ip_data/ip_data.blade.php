@@ -28,19 +28,19 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">عنوان الراوتر</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Default" id="router_ip" name="router_ip" aria-describedby="inputGroup-sizing-default" >
+                                <input type="text" class="form-control" aria-label="Default" id="router_ip" name="router_ip" aria-describedby="inputGroup-sizing-default" required >
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">اسم الراوتر</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Default" id="router_names" name="router_names" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control" aria-label="Default" id="router_names" name="router_names" aria-describedby="inputGroup-sizing-default" required>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">المشترك الأول</span>
                                 </div>
-                                <input type="text" class="form-control" id="router_sub1" name="router_sub1" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control" id="router_sub1" name="router_sub1" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">

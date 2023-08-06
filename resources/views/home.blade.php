@@ -63,14 +63,14 @@
             <div class="card mb-3 card-body">
                 <div class="row align-items-center">
                     <div class="col-auto">
-                        <a href="#!.html">
+                        <a href="{{ route('expenses') }}">
                             <img src="{{ URL('loginRs/images/35564.jpg') }}" class="width-90 rounded-3" alt="">
                         </a>
                     </div>
                     <div class="col">
                         <div class="overflow-hidden flex-nowrap">
                             <h3 class="mb-1">
-                                <a href="#!" class="text-reset">المصروفات</a>
+                                <a href="{{ route('expenses') }}" class="text-reset">المصروفات</a>
                             </h3>
                         </div>
                     </div>

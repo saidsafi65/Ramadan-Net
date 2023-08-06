@@ -45,6 +45,7 @@ Route::get('/daily_sell_jawal/{key}', 'App\Http\Controllers\HomeController@daily
 Route::get('/social_media', 'App\Http\Controllers\HomeController@social_media')->name('social_media');
 Route::get('/ip_routers', 'App\Http\Controllers\HomeController@ip_routers')->name('ip_routers');
 Route::get('/ip_routers_location/{key}', 'App\Http\Controllers\HomeController@ip_routers_location')->name('ip_routers_location');
+Route::get('/expenses', 'App\Http\Controllers\HomeController@expenses')->name('expenses');
 
 
 //save to database DailyCard
@@ -90,8 +91,11 @@ Route::view('edit_social_media/{id}', 'edit_socialmedia');
 Route::post('edit_social_media/{id}', [AuthenticationController::class, 'edit_socialmedia']);
 
 //save to database social media Account
-Route::view('add_ip_routers/{name}&{key}', 'add_iprouters');
-Route::post('add_ip_routers/{name}&{key}', [AuthenticationController::class, 'add_iprouters']);
+Route::view('ip_routers_location/add_ip_routers', 'add_iprouters');
+Route::post('ip_routers_location/add_ip_routers', [AuthenticationController::class, 'add_iprouters']);
 //Edit to database Routers Account
-Route::view('edit_ip_routers/{id}', 'edit_iprouters');
-Route::post('edit_ip_routers/{id}', [AuthenticationController::class, 'edit_iprouters']);
+Route::view('ip_routers_location/edit_ip_routers/{id}', 'edit_iprouters');
+Route::post('ip_routers_location/edit_ip_routers/{id}', [AuthenticationController::class, 'edit_iprouters']);
+//save to database Aria Location ip Account
+Route::view('add_aria_routers', 'add_ariarouters');
+Route::post('add_aria_routers', [AuthenticationController::class, 'add_ariarouters']);

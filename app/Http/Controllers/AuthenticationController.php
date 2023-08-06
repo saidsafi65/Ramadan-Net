@@ -294,19 +294,25 @@ class AuthenticationController extends Controller
         return redirect('social_media')->with('status', 'Student Updated Successfully');
     }
 
-    public function add_iprouters(Request $request, $name, $key)
+    public function add_iprouters(Request $request)
     {
+        $name = $request->name;
+        $key = $request->key;
         $ip_routers = new ip_routers();
-        $ip_routers->router_location = $request->$name;
-        $ip_routers->router_location_number = $request->$key;
+        $ip_routers->router_location = $name;
+        $ip_routers->router_location_number = $key;
         $ip_routers->router_ip = $request->router_ip;
         $ip_routers->router_names = $request->router_names;
         $ip_routers->router_sub1 = $request->router_sub1;
-        $ip_routers->router_sub2 = $request->router_sub2;
-        $ip_routers->router_sub3 = $request->router_sub3;
-        $ip_routers->router_sub4 = $request->router_sub4;
-        $ip_routers->router_sub5 = $request->router_sub5;
-        $ip_routers->router_sub6 = $request->router_sub6;
+        $ip_routers->router_sub2 = $request->router_sub2 ? $request->router_sub2 : '';
+        $ip_routers->router_sub3 = $request->router_sub3 ? $request->router_sub3 : '';
+        $ip_routers->router_sub4 = $request->router_sub4 ? $request->router_sub4 : '';
+        $ip_routers->router_sub5 = $request->router_sub5 ? $request->router_sub5 : '';
+        $ip_routers->router_sub6 = $request->router_sub6 ? $request->router_sub6 : '';
+        $ip_routers->router_sub7 = $request->router_sub7 ? $request->router_sub7 : '';
+        $ip_routers->router_sub8 = $request->router_sub8 ? $request->router_sub8 : '';
+        $ip_routers->router_sub9 = $request->router_sub9 ? $request->router_sub9 : '';
+        $ip_routers->router_sub10 = $request->router_sub10 ? $request->router_sub10 : '';
         $ip_routers->save();
         return redirect()->back()->with('success', 'routers save Successfully');
     }
@@ -317,12 +323,37 @@ class AuthenticationController extends Controller
         $ip_routers->router_ip = $request->router_ip;
         $ip_routers->router_names = $request->router_names;
         $ip_routers->router_sub1 = $request->router_sub1;
-        $ip_routers->router_sub2 = $request->router_sub2;
-        $ip_routers->router_sub3 = $request->router_sub3;
-        $ip_routers->router_sub4 = $request->router_sub4;
-        $ip_routers->router_sub5 = $request->router_sub5;
-        $ip_routers->router_sub6 = $request->router_sub6;
+        $ip_routers->router_sub2 = $request->router_sub2 ? $request->router_sub2 : '';
+        $ip_routers->router_sub3 = $request->router_sub3 ? $request->router_sub3 : '';
+        $ip_routers->router_sub4 = $request->router_sub4 ? $request->router_sub4 : '';
+        $ip_routers->router_sub5 = $request->router_sub5 ? $request->router_sub5 : '';
+        $ip_routers->router_sub6 = $request->router_sub6 ? $request->router_sub6 : '';
+        $ip_routers->router_sub7 = $request->router_sub7 ? $request->router_sub7 : '';
+        $ip_routers->router_sub8 = $request->router_sub8 ? $request->router_sub8 : '';
+        $ip_routers->router_sub9 = $request->router_sub9 ? $request->router_sub9 : '';
+        $ip_routers->router_sub10 = $request->router_sub10 ? $request->router_sub10 : '';
         $ip_routers->update();
         return redirect()->back()->with('success', 'routers Updated Successfully');
+    }
+
+    public function add_ariarouters(Request $request)
+    {
+        $ip_routers = new ip_routers();
+        $ip_routers->router_location = $request->router_location;
+        $ip_routers->router_location_number = $request->router_location_number;
+        $ip_routers->router_ip = $request->router_ip ? $request->router_ip : '';
+        $ip_routers->router_names = $request->router_names ? $request->router_names : '';
+        $ip_routers->router_sub1 = $request->router_sub1 ? $request->router_sub1 : '';
+        $ip_routers->router_sub2 = $request->router_sub2 ? $request->router_sub2 : '';
+        $ip_routers->router_sub3 = $request->router_sub3 ? $request->router_sub3 : '';
+        $ip_routers->router_sub4 = $request->router_sub4 ? $request->router_sub4 : '';
+        $ip_routers->router_sub5 = $request->router_sub5 ? $request->router_sub5 : '';
+        $ip_routers->router_sub6 = $request->router_sub6 ? $request->router_sub6 : '';
+        $ip_routers->router_sub7 = $request->router_sub7 ? $request->router_sub7 : '';
+        $ip_routers->router_sub8 = $request->router_sub8 ? $request->router_sub8 : '';
+        $ip_routers->router_sub9 = $request->router_sub9 ? $request->router_sub9 : '';
+        $ip_routers->router_sub10 = $request->router_sub10 ? $request->router_sub10 : '';
+        $ip_routers->save();
+        return redirect()->back()->with('success', 'routers save Successfully');
     }
 }

@@ -21,25 +21,19 @@
                         <h4 class="modal-title">اضافة راوتر جديد</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="add_ip_routers" method="POST" class="form validate-form" style="direction: ltr;">
+                        <form action="add_aria_routers" method="POST" class="form validate-form" style="direction: ltr;">
                             @csrf
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">الوصف</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">اسم الحارة أو المنطقة</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Default" id="remm" name="remm" aria-describedby="inputGroup-sizing-default" required>
+                                <input type="text" class="form-control" aria-label="Default" id="router_location" name="router_location" aria-describedby="inputGroup-sizing-default" required>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">اسم المستخدم</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">رقم المنطقة</span>
                                 </div>
-                                <input type="text" class="form-control" aria-label="Default" id="user_name" name="user_name" aria-describedby="inputGroup-sizing-default" required>
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">كلمة المرور</span>
-                                </div>
-                                <input type="text" class="form-control" id="passwords" name="passwords" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                                <input type="text" class="form-control" aria-label="Default" id="router_location_number" name="router_location_number" aria-describedby="inputGroup-sizing-default" required>
                             </div>
                             <div class="modal-footer">
                                 <input type="submit" class="btn btn-primary" value="حفظ">
@@ -47,7 +41,6 @@
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -60,7 +53,7 @@
         @foreach ($ip_routers as $ip_routers)
         <tr>
             <td>{{$ip_routers->router_location}}</td>
-            <td><button type="button" class="btn btn-primary" onclick="window.location.href = '{{route('ip_routers_location',['key'=>$ip_routers->router_location_number,'name'=>$ip_routers->router_location])}}' " >عرض التفاصيل</button></td>
+            <td><button type="button" class="btn btn-primary" onclick="window.location.href = '{{route('ip_routers_location',['key'=>$ip_routers->router_location_number,'name'=>$ip_routers->router_location])}}' ">عرض التفاصيل</button></td>
         </tr>
         @endforeach
     </table>

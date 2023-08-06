@@ -114,4 +114,8 @@ class HomeController extends Controller
                 ->with(['key' => $key]);
         }
     }
+    public function expenses()
+    {
+        return view('my_web.expenses.expenses');
+    }
 }
