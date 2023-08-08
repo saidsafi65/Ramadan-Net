@@ -99,3 +99,7 @@ Route::post('ip_routers_location/edit_ip_routers/{id}', [AuthenticationControlle
 //save to database Aria Location ip Account
 Route::view('add_aria_routers', 'add_ariarouters');
 Route::post('add_aria_routers', [AuthenticationController::class, 'add_ariarouters']);
+
+Route::post('add_personal_expense', [AuthenticationController::class, 'add_personal_expense']);
+Route::post('add_workers_salarie', [AuthenticationController::class, 'add_workers_salarie_expense']);
+Route::post('add_internet_sub', [AuthenticationController::class, 'add_internet_subscription']);

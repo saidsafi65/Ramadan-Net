@@ -11,12 +11,15 @@ use App\Models\daily_selling_electricity;
 use App\Models\daily_selling_jawal;
 use App\Models\daily_selling_ooredoo;
 use App\Models\daily_snaks;
+use App\Models\internet_subscription_expense;
 use App\Models\ip_routers;
+use App\Models\personal_expense;
 use App\Models\remaining_electricity_balance;
 use App\Models\remaining_jawal_balance;
 use App\Models\remaining_ooredoo_balance;
 use App\Models\social_media;
 use App\Models\User;
+use App\Models\workers_salarie_expense;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -354,6 +357,32 @@ class AuthenticationController extends Controller
         $ip_routers->router_sub9 = $request->router_sub9 ? $request->router_sub9 : '';
         $ip_routers->router_sub10 = $request->router_sub10 ? $request->router_sub10 : '';
         $ip_routers->save();
+        return redirect()->back()->with('success', 'routers save Successfully');
+    }
+
+    public function add_personal_expense(Request $request)
+    {
+        $personal_expense = new personal_expense();
+        $personal_expense->personal_expense_total = $request->personal_expense_total * -1;
+        $personal_expense->save();
+        return redirect()->back()->with('success', 'routers save Successfully');
+    }
+
+    public function add_workers_salarie_expense(Request $request)
+    {
+        $personal_expense = new workers_salarie_expense();
+        $personal_expense->name_workers_salarie = $request->name_workers_salarie;
+        $personal_expense->workers_salarie_total = $request->workers_salarie_total * -1;
+        $personal_expense->save();
+        return redirect()->back()->with('success', 'routers save Successfully');
+    }
+
+    public function add_internet_subscription(Request $request)
+    {
+        $internet_subscription_expense = new internet_subscription_expense();
+        $internet_subscription_expense->internet_sub_salarie = $request->internet_sub_salarie;
+        $internet_subscription_expense->internet_sub_total = $request->internet_sub_total * -1;
+        $internet_subscription_expense->save();
         return redirect()->back()->with('success', 'routers save Successfully');
     }
 }
