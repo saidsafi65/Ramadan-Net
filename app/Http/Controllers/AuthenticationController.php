@@ -13,10 +13,15 @@ use App\Models\daily_selling_ooredoo;
 use App\Models\daily_snaks;
 use App\Models\internet_subscription_expense;
 use App\Models\ip_routers;
+use App\Models\mobile_accessories_expense;
 use App\Models\personal_expense;
 use App\Models\remaining_electricity_balance;
 use App\Models\remaining_jawal_balance;
 use App\Models\remaining_ooredoo_balance;
+use App\Models\sims_card1;
+use App\Models\sims_card2;
+use App\Models\sims_card3;
+use App\Models\sims_card4;
 use App\Models\social_media;
 use App\Models\User;
 use App\Models\workers_salarie_expense;
@@ -385,4 +390,53 @@ class AuthenticationController extends Controller
         $internet_subscription_expense->save();
         return redirect()->back()->with('success', 'routers save Successfully');
     }
+
+    public function add_sims_card1(Request $request)
+    {
+        $sims_card1 = new sims_card1();
+        $sims_card1->sims_card1_total = $request->sims_card1_total;
+        $sims_card1->sims_card1_expens = $request->sims_card1_expens * -1;
+        $sims_card1->sims_card1_remm = $request->sims_card1_remm ? $request->sims_card1_remm : '';
+        $sims_card1->save();
+        return redirect()->back()->with('success', 'Sim Card save Successfully');
+    }
+    public function add_sims_card2(Request $request)
+    {
+        $sims_card2 = new sims_card2();
+        $sims_card2->sims_card2_total = $request->sims_card2_total;
+        $sims_card2->sims_card2_expens = $request->sims_card2_expens * -1;
+        $sims_card2->sims_card2_remm = $request->sims_card2_remm ? $request->sims_card2_remm : '';
+        $sims_card2->save();
+        return redirect()->back()->with('success', 'Sim Card save Successfully');
+    }
+    public function add_sims_card3(Request $request)
+    {
+        $sims_card3 = new sims_card3();
+        $sims_card3->sims_card3_total = $request->sims_card3_total;
+        $sims_card3->sims_card3_expens = $request->sims_card3_expens * -1;
+        $sims_card3->sims_card3_remm = $request->sims_card3_remm ? $request->sims_card3_remm : '';
+        $sims_card3->save();
+        return redirect()->back()->with('success', 'Sim Card save Successfully');
+    }
+    public function add_sims_card4(Request $request)
+    {
+        $sims_card4 = new sims_card4();
+        $sims_card4->sims_card4_total = $request->sims_card4_total;
+        $sims_card4->sims_card4_expens = $request->sims_card4_expens * -1;
+        $sims_card4->sims_card4_remm = $request->sims_card4_remm ? $request->sims_card4_remm : '';
+        $sims_card4->save();
+        return redirect()->back()->with('success', 'Sim Card save Successfully');
+    }
+
+    public function add_mobile_accessories(Request $request)
+    {
+        $mobile_accessories = new mobile_accessories_expense();
+        $mobile_accessories->accessories_name = $request->accessories_name;
+        $mobile_accessories->accessories_amount = $request->accessories_amount;
+        $mobile_accessories->accessories_total = $request->accessories_total * -1;
+        $mobile_accessories->remm = $request->remm ? $request->remm : '';
+        $mobile_accessories->save();
+        return redirect()->back()->with('success', 'Sim Card save Successfully');
+    }
+    
 }

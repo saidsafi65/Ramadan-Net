@@ -46,6 +46,7 @@ Route::get('/social_media', 'App\Http\Controllers\HomeController@social_media')-
 Route::get('/ip_routers', 'App\Http\Controllers\HomeController@ip_routers')->name('ip_routers');
 Route::get('/ip_routers_location/{key}', 'App\Http\Controllers\HomeController@ip_routers_location')->name('ip_routers_location');
 Route::get('/expenses', 'App\Http\Controllers\HomeController@expenses')->name('expenses');
+Route::get('/sim_card', 'App\Http\Controllers\HomeController@sim_card')->name('sim_card');
 
 
 //save to database DailyCard
@@ -103,3 +104,11 @@ Route::post('add_aria_routers', [AuthenticationController::class, 'add_ariaroute
 Route::post('add_personal_expense', [AuthenticationController::class, 'add_personal_expense']);
 Route::post('add_workers_salarie', [AuthenticationController::class, 'add_workers_salarie_expense']);
 Route::post('add_internet_sub', [AuthenticationController::class, 'add_internet_subscription']);
+//Sim Card Add Amounts
+Route::post('add_sims_card1', [AuthenticationController::class, 'add_sims_card1']);
+Route::post('add_sims_card2', [AuthenticationController::class, 'add_sims_card2']);
+Route::post('add_sims_card3', [AuthenticationController::class, 'add_sims_card3']);
+Route::post('add_sims_card4', [AuthenticationController::class, 'add_sims_card4']);
+
+//Add mobile accessories
+Route::post('add_mobile_accessories', [AuthenticationController::class, 'add_mobile_accessories']);

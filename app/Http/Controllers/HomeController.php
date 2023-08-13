@@ -116,6 +116,20 @@ class HomeController extends Controller
     }
     public function expenses()
     {
-        return view('my_web.expenses.expenses');
+        $mobile_accessories_items = DB::select('SELECT * FROM mobile_accessories_items');
+        return View::make('my_web.expenses.expenses')
+        ->with(['mobile_accessories_items' => $mobile_accessories_items]);
+    }
+    public function sim_card()
+    {
+        $sim_card1 = DB::select('SELECT sum(sims_card1_total) AS TOTAL FROM sims_card1');
+        $sim_card2 = DB::select('SELECT sum(sims_card2_total) AS TOTAL FROM sims_card2');
+        $sim_card3 = DB::select('SELECT sum(sims_card3_total) AS TOTAL FROM sims_card3');
+        $sim_card4 = DB::select('SELECT sum(sims_card4_total) AS TOTAL FROM sims_card4');
+        return View::make('my_web.simCard.sim_card')
+        ->with(['sims_card1' => $sim_card1])
+        ->with(['sims_card2' => $sim_card2])
+        ->with(['sims_card3' => $sim_card3])
+        ->with(['sims_card4' => $sim_card4]);
     }
 }

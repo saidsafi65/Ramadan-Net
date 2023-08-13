@@ -146,12 +146,34 @@
         </div>
 
         <!-- The Mobile accessories expense Option -->
-        <div class="wrap-login100 row justify-content-center align-items-center Mobile_accessories" id="Mobile_accessories" name="Mobile_accessories" style="padding: 100px 130px 33px 10px;">
-            <form action="/add_internet_sub" method="POST" class="validate-form" style="width: max-content;">
+        <div class="wrap-login100 row justify-content-center align-items-center Mobile_accessories" id="Mobile_accessories" name="Mobile_accessories">
+            <form action="/add_mobile_accessories" method="POST" class="validate-form" style="width: max-content;">
                 @csrf
                 <table class="table table-striped table-hover table-bordered" style="text-align-last: center;direction: rtl;">
                     <tr>
-                        <th></th>
+                        <th colspan="4">مصروفات اكسسوارات الجوال</th>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><select class="form-select" multiple aria-label="multiple select example" name="accessories_name" id="accessories_name" required>
+                                <option disabled>----اختيار أحد الأصناف----</option>
+                                @foreach ($mobile_accessories_items as $mobile_accessories_items)
+                                <option value="{{$mobile_accessories_items->value}}">{{$mobile_accessories_items->product}}</option>
+                                @endforeach
+                                <option disabled>--------------------------------</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th>الكمية</th>
+                        <td><input type="number" name="accessories_amount" id="accessories_amount" class="form-control" autocomplete="off" required></td>
+                        <th>السعر</th>
+                        <td><input type="number" name="accessories_total" id="accessories_total" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <th>ملاحظات</th>
+                        <td colspan="3"><input type="text" name="remm" id="remm" class="form-control" autocomplete="off" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><button type="submit" class="btn btn-success">صرف المبلغ</button></td>
                     </tr>
                     <tr>
                         <td colspan="4"><button type="button" name="back1" id="back1" class="btn btn-warning">رجوع</button></td>
